@@ -1,0 +1,55 @@
+@font-face {
+    font-family: "Minecraftia";
+    src: url("fonts/minecraftia.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Minecraftia Bold";
+    src: url("fonts/minecraftia-bold.otf") format("opentype")
+}
+
+bold {
+    font-family: "Minecraftia Bold", Fallback, sans-serif;
+    text-shadow: var(--shadow-size) var(--shadow-size) var(--shadow-color);
+}
+
+body {
+    --color: #FFFFFF;
+    --shadow-color: #3F3F3F;
+
+    font-family: "Minecraftia", Fallback, sans-serif;
+}
+
+input, select, button {
+    font-family: "Minecraftia", Fallback, sans-serif;
+}
+
+h1 {
+    --font-size: 20px;
+    font-family: "Minecraftia Bold", Fallback, sans-serif;
+    --shadow-size: calc(var(--font-size) / 10);
+    font-size: var(--font-size);
+    color: var(--color);
+    text-shadow: var(--shadow-size) var(--shadow-size) var(--shadow-color);
+}
+
+p, label, span {
+    --font-size: 20px;
+    --shadow-size: calc(var(--font-size) / 10);
+    font-size: var(--font-size);
+    color: var(--color);
+    text-shadow: var(--shadow-size) var(--shadow-size) var(--shadow-color);
+}
+
+a {
+    color: rgb(0, 0, 238);
+    text-shadow: var(--shadow-size) var(--shadow-size) rgb(0, 0, 59);
+    text-decoration-thickness: var(--shadow-size);
+    text-underline-offset: 1px;
+}
+
+img {
+    -ms-interpolation-mode: nearest-neighbor;
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
+}
