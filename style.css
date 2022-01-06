@@ -8,6 +8,10 @@
     src: url("fonts/minecraftia-bold.otf") format("opentype")
 }
 
+em {
+    text-shadow: calc(var(--font-size) / 13.2) var(--shadow-size) var(--shadow-color);
+}
+
 bold {
     font-family: "Minecraftia Bold", Fallback, sans-serif;
     text-shadow: var(--shadow-size) var(--shadow-size) var(--shadow-color);
@@ -20,21 +24,32 @@ body {
     font-family: "Minecraftia", Fallback, sans-serif;
 }
 
-input, select, button {
+input, select, button, code {
     font-family: "Minecraftia", Fallback, sans-serif;
 }
 
-h1 {
-    --font-size: 20px;
-    font-family: "Minecraftia Bold", Fallback, sans-serif;
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Minecraftia", Fallback, sans-serif;
     --shadow-size: calc(var(--font-size) / 10);
     font-size: var(--font-size);
     color: var(--color);
     text-shadow: var(--shadow-size) var(--shadow-size) var(--shadow-color);
+    font-weight: 100;
+}
+
+h1 {--font-size: 40px;}
+h2 {--font-size: 32px;}
+h3 {--font-size: 24px;}
+h4 {--font-size: 24px;}
+h5 {--font-size: 16px;}
+h6 {--font-size: 8px;}
+
+code {
+    text-shadow: none;
 }
 
 p, label, span {
-    --font-size: 20px;
+    --font-size: 24px;
     --shadow-size: calc(var(--font-size) / 10);
     font-size: var(--font-size);
     color: var(--color);
@@ -52,4 +67,63 @@ img {
     -ms-interpolation-mode: nearest-neighbor;
     image-rendering: crisp-edges;
     image-rendering: pixelated;
+}
+
+button {
+    padding: 0px 4px;
+    --font-size: 24px;
+    font-size: var(--font-size);
+    background-color: #C6C6C6;
+    border-width: 6.5px;
+    border-image: url('assets/button.png') 30 repeat;
+    background-clip: padding-box;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #8892c9;
+    border-image: url('assets/button_active_old.png') 30 repeat;
+}
+
+.input {
+
+}
+
+::-webkit-file-upload-button {
+    background: black;
+    color: red;
+  }
+
+
+.widget {
+    padding: 0px 5px;
+    border: 5px solid;
+    background-color: #6D6D6D;
+    border-image: url('assets/widget.png') 20 repeat;
+    cursor: pointer;
+}
+
+.widget:hover {
+    background-color: #7e88bf;
+    border-image: url('assets/widget_active_old.png') 20 repeat;
+}
+
+.widget.new:hover {
+    border-image: url('assets/widget_active_new.png') 20 repeat;
+}
+
+.slot {
+    position: relative;
+    background-color: #8B8B8B;
+    width: 48px;
+    height: 48px;
+    /* border: 2.5px solid;
+    border-image: url('assets/slot.png') 10 repeat; */
+    cursor: pointer;
+}
+
+.slot .count {
+    position: absolute;
+    top: -9.5px;
+    right: -2.5px;
 }
