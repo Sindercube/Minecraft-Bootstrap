@@ -5,37 +5,82 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta name="description" content="Python FastAPI with a collection of Minecraft Skin rendering APIs.">
-  <meta property="og:title" content="Skindentity">
-  <meta property="og:description" content="Python FastAPI with a collection of Minecraft Skin rendering APIs.">
+  <meta name="description" content="Minecraft styled Bootstrap thingamajig.">
+  <meta property="og:title" content="Minecraft Bootstrap">
+  <meta property="og:description" content="Minecraft styled Bootstrap thingamajig.">
   <meta property="og:image" content="icon.png">
 
+  <script src="script.js"></script>
   <link rel="stylesheet" href="style.css">
 
-  <title>Skindentity</title>
+  <title>Minecraft Bootstrap</title>
   <link rel="icon" href="icon.png">
 </head>
 
-<body style="background-color: lightblue;">
+<body style="background-color: lightblue;" onload="main()">
   <h1><bold>Minecraft Bootstrap</bold></h1>
 
-  <button>button</button>
-  <br>
+  <div class="example">
+    <h2>Regular Examples</h2>
+    <button onclick="toggle(this)" value="true">Show Code</button>
+    <button onclick="copy(this)">Copy</button>
+    <div class="html" style="width: 75%;">
+
+<p>normal text</p>
+<p><bold>bolded text</bold></p>
+<p><em>emphasized text</em></p>
+
+<button>button</button>
+
+<select>
+  <option>fizz</option>
+  <option>buzz</option>
+</select>
+
+<input placeholder="input test">
+<input type="file" placeholder="file upload test">
+
+    </div>
+  </div>
+
+  <div class="example">
+    <h2>Widgets Example</h2>
+    <button onclick="toggle(this)" value="true">Show Code</button>
+    <button onclick="copy(this)">Copy</button>
+    <div class="html" style="width: 75%;">
+
+<div class="widgetContainer">
+  <p class="widget">Widget 1</p>
+  <div class="break"></div> <!-- break -->
+  <p class="widget">Widget 2</p>
+  <div class="break"></div> <!-- break -->
+  <p class="widget">Widget 3</p>
+  <p class="widget">Widget 4</p>
+</div>
+
+    </div>
+  </div>
+
+  <div class="example">
+    <h2>Inventory Example</h2>
+    <button onclick="toggle(this)" value="true">Show Code</button>
+    <button onclick="copy(this)">Copy</button>
+    <div class="html" style="width: 75%;">
+
+<div class="inventory">
+  <div class="title">Container Name</div>
   <div class="slot" style="height: 36px; width: 36px;">
     <p class="count">64</p>
   </div>
-  <br>
-  <input type="file" placeholder="file upload test"></input>
-  <br>
-  <input placeholder="input test">
-  <br>
-  <select>
-      <option>fizz</option>
-      <option>buzz</option>
-  </select>
-  <br>
-  <p><bold>bold test</bold></p>
-  <p><em>emphasized test</em></p>
-  <p class="widget">widget test</p>
+</div>
+
+    </div>
+  </div>
+
   <p>Like how this website looks? you can make your website look similar by adding <code>&lt;link rel=&quot;stylesheet&quot; href=&quot;https://sorrowfall.github.io/Minecraft-Bootstrap/style.css&quot;&gt;</code> to your own website's &lt;head&gt; tag!</p>
+
+  <div class="footer">
+    <p>Not affiliated with Minecraft, Mojang or Microsoft (Thankfully)</p>
+    <p>Source code can be found <a href="https://github.com/Sorrowfall/Minecraft-Bootstrap" rel="noopener noreferrer" target="_blank">here</a></p>
+  </div>
 </body>

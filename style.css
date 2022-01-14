@@ -1,35 +1,48 @@
+/* pixelate everything */
+html {
+    -ms-interpolation-mode: nearest-neighbor;
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
+}
+
+/* font rules */
 @font-face {
     font-family: "Minecraftia";
     src: url("fonts/minecraftia.otf") format("opentype");
 }
-
 @font-face {
     font-family: "Minecraftia Bold";
     src: url("fonts/minecraftia-bold.otf") format("opentype")
 }
 
-em {
-    text-shadow: calc(var(--font-size) / 13.2) var(--shadow-size) var(--shadow-color);
+body, input, select, button, code {
+    font-family: "Minecraftia", Fallback, sans-serif;
 }
 
 bold {
     font-family: "Minecraftia Bold", Fallback, sans-serif;
-    text-shadow: var(--shadow-size) var(--shadow-size) var(--shadow-color);
 }
 
+/* default colors */
 body {
     --color: #FFFFFF;
     --shadow-color: #3F3F3F;
-
-    font-family: "Minecraftia", Fallback, sans-serif;
 }
 
-input, select, button, code {
-    font-family: "Minecraftia", Fallback, sans-serif;
+a {
+    color: #0000ee;
+    text-shadow: var(--shadow-size) var(--shadow-size) #00003b;
+    text-decoration-thickness: var(--shadow-size);
+    text-underline-offset: 1px;
 }
 
+/* text shadows */
+em { text-shadow: calc(var(--font-size) / 13.2) var(--shadow-size) var(--shadow-color); }
+bold { text-shadow: var(--shadow-size) var(--shadow-size) var(--shadow-color); }
+code { text-shadow: none; }
+
+/* headers */
 h1, h2, h3, h4, h5, h6 {
-    font-family: "Minecraftia", Fallback, sans-serif;
     --shadow-size: calc(var(--font-size) / 10);
     font-size: var(--font-size);
     color: var(--color);
@@ -44,10 +57,6 @@ h4 {--font-size: 24px;}
 h5 {--font-size: 16px;}
 h6 {--font-size: 8px;}
 
-code {
-    text-shadow: none;
-}
-
 p, label, span {
     --font-size: 24px;
     --shadow-size: calc(var(--font-size) / 10);
@@ -56,74 +65,124 @@ p, label, span {
     text-shadow: var(--shadow-size) var(--shadow-size) var(--shadow-color);
 }
 
-a {
-    color: rgb(0, 0, 238);
-    text-shadow: var(--shadow-size) var(--shadow-size) rgb(0, 0, 59);
-    text-decoration-thickness: var(--shadow-size);
-    text-underline-offset: 1px;
-}
-
-img {
-    -ms-interpolation-mode: nearest-neighbor;
-    image-rendering: crisp-edges;
-    image-rendering: pixelated;
-}
-
 button {
+    height: 48px;
     padding: 0px 4px;
     --font-size: 24px;
     font-size: var(--font-size);
     background-color: #C6C6C6;
-    border-width: 6.5px;
-    border-image: url('assets/button.png') 30 repeat;
+    border-width: 6px;
+    border-image: url('assets/button.png') 3 repeat;
     background-clip: padding-box;
     cursor: pointer;
 }
 
 button:hover {
     background-color: #8892c9;
-    border-image: url('assets/button_active_old.png') 30 repeat;
+    border-image: url('assets/button_active_old.png') 3 repeat;
 }
 
-.input {
-
+input {
+    height: 32px;
+    font-size: var(--font-size);
 }
 
-::-webkit-file-upload-button {
+select {
+    height: 32px;
+}
+
+input::-webkit-file-upload-button { /* type=file */
     background: black;
     color: red;
   }
 
+/* custom decorators */
+.widgetContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.break {
+    flex-basis: 100%;
+    height: 0;
+}
+
+.spacer {
+    flex-grow: 1;
+}
 
 .widget {
-    padding: 0px 5px;
+    flex-grow: 1;
+    text-align: center;
+    margin: 8px;
+    padding: 4px 0px;
     border: 5px solid;
     background-color: #6D6D6D;
-    border-image: url('assets/widget.png') 20 repeat;
+    border-image: url('assets/widget.png') 2 repeat;
     cursor: pointer;
 }
-
 .widget:hover {
     background-color: #7e88bf;
-    border-image: url('assets/widget_active_old.png') 20 repeat;
+    border-image: url('assets/widget_active_old.png') 2 repeat;
+}
+.widget.new:hover {
+    border-image: url('assets/widget_active_new.png') 2 repeat;
 }
 
-.widget.new:hover {
-    border-image: url('assets/widget_active_new.png') 20 repeat;
+.inventory {
+    display: inline-flex;
+    border: 8px solid;
+    background-color: #C6C6C6;
+    background-clip: padding-box;
+    border-image: url('assets/inventory.png') 4 repeat;
+    padding: 8px;
+    padding-top: 2px;
+}
+
+.inventory .title {
+    font-size: 24px;
+    color: #404040;
 }
 
 .slot {
+    flex-grow: 1;
     position: relative;
     background-color: #8B8B8B;
     width: 48px;
     height: 48px;
-    /* border: 2.5px solid;
-    border-image: url('assets/slot.png') 10 repeat; */
+    border: 2.5px solid;
+    border-image: url('assets/slot.png') 1 repeat;
     cursor: pointer;
 }
-
 .slot .count {
     position: absolute;
-    top: -9.5px;
-    right: -2.5px;
+    top: -26.5%;
+    right: -8%;
+}
+
+
+/* website meta, move to a different .css later */
+
+body {
+    margin: 0px;
+}
+
+.html {
+    display: block;
+}
+
+.code-comment {color: #43a550}
+.code-tag {color: #00a6ff}
+.code-string {color: #fd7843}
+
+.code {
+    display: none;
+}
+
+.footer {
+    padding: 1% 0px;
+    background-color: black;
+    text-align: center;
 }
